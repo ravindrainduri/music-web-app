@@ -6,9 +6,8 @@
 trigger:
 - master
 
-pool:
-  name: newpool
-  demands: maven
+pool: Azure Pipelines
+  
 
 steps:
 - task: Maven@3
