@@ -8,9 +8,6 @@ trigger:
 
 pool: newpool
 
-
-  
-
 steps:
 - task: SSH@0
   inputs:
