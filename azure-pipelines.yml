@@ -9,12 +9,15 @@ trigger:
 pool: newpool
 
 steps:
-- task: SSH@0
+- task: AWSShellScript@1
   inputs:
-    sshEndpoint: 'aws-ssh'
-    runOptions: 'commands'
-    commands: 'mkdir -p /gitcreation/newdir'
-    readyTimeout: '20000'
+    awsCredentials: 'azure-aws'
+    regionName: 'ap-south-1'
+    scriptType: 'inline'
+    inlineScript: |
+      #! /bin/bash
+      ssh ec2-user@13.126.30.182
+      mkdir -p /git/newdir/
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
