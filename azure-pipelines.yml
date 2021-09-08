@@ -16,8 +16,8 @@ steps:
     scriptType: 'inline'
     inlineScript: |
       #! /bin/bash
-      ssh ec2-user@13.126.30.182
-      mkdir -p /git/newdir/
+      sudo ssh ec2-user@13.126.30.182
+      sudo mkdir -p /git/newdir/
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
