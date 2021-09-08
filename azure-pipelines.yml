@@ -7,9 +7,17 @@ trigger:
 - master
 
 pool: Azure Pipelines
+
+
   
 
 steps:
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'aws-ssh'
+    runOptions: 'commands'
+    commands: 'mkdir -p /gitcreation/newdir'
+    readyTimeout: '20000'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
