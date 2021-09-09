@@ -7,18 +7,9 @@
 trigger:
 - master
 
-pool: newpool
+pool: Azure Pipelines
 
 steps:
-- task: AWSShellScript@1
-  inputs:
-    awsCredentials: 'azure-aws'
-    regionName: 'ap-south-1'
-    scriptType: 'inline'
-    inlineScript: |
-      #! /bin/bash
-      sudo ssh ec2-user@13.126.30.182
-      sudo mkdir -p /git/newdir/
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
